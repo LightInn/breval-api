@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_makeupartists_experiences",
+  "info": {
+    "displayName": "Experiences",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "company": {
+      "type": "string",
+      "maxLength": 70
+    },
+    "job_name": {
+      "type": "string",
+      "maxLength": 70
+    },
+    "city": {
+      "type": "string",
+      "maxLength": 70
+    },
+    "date_start": {
+      "type": "date"
+    },
+    "date_end": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 2000
+    }
+  }
+}

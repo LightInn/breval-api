@@ -1,0 +1,60 @@
+{
+  "name": "api.my-makeup.fr",
+  "private": true,
+  "version": "1.0.0",
+  "description": "api.my-makeup.fr",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "test": "jest --forceExit --detectOpenHandles --no-cache",
+    "prettier": "prettier --write .",
+    "precommit": "lint-staged",
+    "husky": "husky install"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@jest/globals": "29.6.1",
+    "better-sqlite3": "8.4.0",
+    "husky": "^8.0.3",
+    "jest": "29.6.1",
+    "lint-staged": "13.2.3",
+    "sqlite3": "5.1.6",
+    "supertest": "6.3.3"
+  },
+  "dependencies": {
+    "@strapi/plugin-documentation": "4.11.4",
+    "@strapi/plugin-i18n": "4.11.4",
+    "@strapi/plugin-users-permissions": "4.11.4",
+    "@strapi/strapi": "4.11.4",
+    "fuse": "0.4.0",
+    "fuse.js": "6.6.2",
+    "lodash": "^4.17.21",
+    "minio-for-strapi-v4": "1.0.7"
+  },
+  "author": {
+    "name": "ForHive"
+  },
+  "strapi": {
+    "uuid": "c0d864b1-1b09-4b5b-b4b4-416ea404ac56"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      ".tmp",
+      ".cache"
+    ],
+    "testEnvironment": "node"
+  }
+}
