@@ -35,7 +35,7 @@
     "@strapi/strapi": "4.21.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "5.3.4",
+    "react-router-dom": "6.22.3",
     "styled-components": "^5.3.3",
     "fuse": "0.12.1",
     "fuse.js": "7.0.0",
