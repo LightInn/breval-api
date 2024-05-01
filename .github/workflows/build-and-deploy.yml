@@ -5,10 +5,10 @@ on:
     branches: ["main"]
 
 env:
-  S3_ENDPOINT: "83bfc104d4a2e71a5d8210f2364ee9e4.eu.r2.cloudflarestorage.com"
-  S3_BUCKET: "breval"
-  S3_SSL: true
-  S3_PORT: 443
+  S3_ENDPOINT: "${{secrets.S3_ENDPOINT}}"
+  S3_BUCKET: "${{secrets.S3_BUCKET}}"
+  S3_SSL: "${{secrets.S3_SSL}}"
+  S3_PORT: "${{secrets.S3_PORT}}"
 
 jobs:
   build-and-push:
