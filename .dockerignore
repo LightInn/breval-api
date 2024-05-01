@@ -1,4 +1,11 @@
+.cache
+.github
+.husky
+.idea
+.strapi
+.tmp
+build
+node_modules
 .env
 tests
-.tmp
-.idea
+

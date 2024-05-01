@@ -1,10 +1,13 @@
-FROM node:20-bullseye
+FROM node:20-slim
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 WORKDIR /app
 
 COPY ./package.json ./
 
-RUN yarn install --production
-RUN yarn add pg
+RUN pnpm install --production
+RUN pnpm add pg
 
 COPY . .
 
@@ -38,5 +41,5 @@ ENV DB_CLIENT='postgres'
 
 EXPOSE 1337
 
-CMD ["npm", "start"]
+CMD ["pnpm", "start"]
 
