@@ -90,9 +90,7 @@ ENV S3_ENDPOINT $S3_ENDPOINT
 ENV S3_SSL $S3_SSL
 ENV S3_PORT $S3_PORT
 
-
 ENV NODE_ENV production
-ENV DB_CLIENT='postgres'
 
 COPY --from=install /temp/prod/node_modules node_modules
 COPY --from=prerelease /usr/src/app/build build
