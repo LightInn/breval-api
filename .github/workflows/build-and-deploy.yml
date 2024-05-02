@@ -2,7 +2,7 @@ name: Build and Deploy
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
 
 env:
   DB_CLIENT: "postgres"
@@ -30,7 +30,7 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.APP_IMAGE }}
-          args:
+          build-args: |
             DB_CLIENT: ${{ env.DB_CLIENT }}
             DATABASE_HOST: ${{ env.DATABASE_HOST }}
             S3_BUCKET: ${{ env.S3_BUCKET }}

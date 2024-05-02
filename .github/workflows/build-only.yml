@@ -2,7 +2,7 @@ name: Just Build Docker
 
 on:
   pull_request:
-    branches: ["main"]
+    branches: [ "main" ]
 
 jobs:
   just-build:
@@ -20,5 +20,5 @@ jobs:
           context: .
           push: false
           tags: ${{ secrets.APP_IMAGE }}
-          args:
+          build-args: |
             S3_PUBLIC_ENDPOINT: ${{ secrets.S3_PUBLIC_ENDPOINT }}
