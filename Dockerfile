@@ -1,14 +1,27 @@
-FROM node:20-slim
-RUN corepack enable
-WORKDIR /app
+# use the official Bun image
+# see all versions at https://hub.docker.com/r/oven/bun/tags
+FROM oven/bun:latest as base
+WORKDIR /usr/src/app
 
-COPY ./package.json ./
+# install dependencies into temp directory
+# this will cache them and speed up future builds
+FROM base AS install
+RUN mkdir -p /temp/dev
+COPY package.json bun.lockb /temp/dev/
+RUN cd /temp/dev && bun install --frozen-lockfile
 
-RUN yarn install --production
-RUN yarn add pg
+# install with --production (exclude devDependencies)
+RUN mkdir -p /temp/prod
+COPY package.json bun.lockb /temp/prod/
+RUN cd /temp/prod && bun install --frozen-lockfile --production
 
+# copy node_modules from temp directory
+# then copy all (non-ignored) project files into the image
+FROM base AS prerelease
+COPY --from=install /temp/dev/node_modules node_modules
 COPY . .
 
+# [optional] tests & build
 ARG DATABASE_HOST
 ARG DATABASE_PORT
 ARG DATABASE_NAME
@@ -37,7 +50,25 @@ ENV S3_PORT $S3_PORT
 ENV NODE_ENV production
 ENV DB_CLIENT='postgres'
 
-EXPOSE 1337
 
-CMD ["pnpm", "start"]
 
+RUN bun test
+RUN bun run build
+
+# copy production dependencies and source code into final image
+FROM base AS release
+COPY --from=install /temp/prod/node_modules node_modules
+COPY --from=prerelease /usr/src/app/build build
+COPY --from=prerelease /usr/src/app/.strapi .strapi
+COPY --from=prerelease /usr/src/app/config config
+COPY --from=prerelease /usr/src/app/database database
+COPY --from=prerelease /usr/src/app/public public
+COPY --from=prerelease /usr/src/app/src src
+COPY --from=prerelease /usr/src/app/types types
+COPY --from=prerelease /usr/src/app/favicon.ico .
+COPY --from=prerelease /usr/src/app/package.json .
+
+# run the app
+USER bun
+EXPOSE 1337/tcp
+ENTRYPOINT [ "bun", "run", "start" ]
