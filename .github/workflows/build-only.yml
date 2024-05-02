@@ -4,20 +4,6 @@ on:
   pull_request:
     branches: ["main"]
 
-env:
-  DB_CLIENT: "sqlite"
-  JWT_SECRET: "XXXXXXXXXXXXXXXXXXTEST=="
-  APP_KEYS: "XXXXXXXXXXXXXXXXXXTEST==,XXXXXXXXXXXXXXXXXXTEST==,XXXXXXXXXXXXXXXXXXTEST==,XXXXXXXXXXXXXXXXXXTEST=="
-  API_TOKEN_SALT: "XXXXXXXXXXXXXXTEST=="
-  ADMIN_JWT_SECRET: "XXXXXXXXXXXTEST=="
-  S3_BUCKET: "bucket"
-  S3_ACCESS_KEY_ID: "ACCESS_KEY_ID"
-  S3_ACCESS_SECRET: "S3_ACCESS_SECRET"
-  S3_ENDPOINT: "localhost"
-  S3_PUBLIC_ENDPOINT: "localhost"
-  S3_SSL: false
-  S3_PORT: 9000
-
 jobs:
   just-build:
     runs-on: ubuntu-latest
@@ -34,3 +20,5 @@ jobs:
           context: .
           push: false
           tags: ${{ secrets.APP_IMAGE }}
+          args:
+            S3_PUBLIC_ENDPOINT: ${{ secrets.S3_PUBLIC_ENDPOINT }}
