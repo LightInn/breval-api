@@ -1,7 +1,7 @@
 {
   "name": "api.brev.al",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "api.brev.al",
   "scripts": {
     "dev": "strapi develop",
@@ -29,19 +29,20 @@
     "supertest": "7.0.0"
   },
   "dependencies": {
-    "@strapi/plugin-documentation": "4.24.1",
-    "@strapi/plugin-i18n": "4.24.1",
-    "@strapi/plugin-users-permissions": "4.24.1",
-    "@strapi/strapi": "4.24.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "5.3.4",
-    "styled-components": "^5.3.3",
+    "@strapi/plugin-documentation": "4.24.0",
+    "@strapi/plugin-i18n": "4.24.0",
+    "@strapi/plugin-users-permissions": "4.24.0",
+    "@strapi/strapi": "4.24.0",
     "fuse": "0.12.1",
     "fuse.js": "7.0.0",
     "lodash": "^4.17.21",
     "minio-for-strapi-v4": "1.0.7",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "5.3.4",
+    "strapi-provider-cloudflare-r2": "^0.2.5",
+    "styled-components": "^5.3.3"
   },
   "author": {
     "name": "ForHive"

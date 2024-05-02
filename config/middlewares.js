@@ -10,8 +10,18 @@ module.exports = ({ env }) => {
           useDefaults: true,
           directives: {
             "connect-src": ["'self'", "https:"],
-            "img-src": ["'self'", "data:", "blob:", s3url.host],
-            "media-src": ["'self'", "data:", "blob:", s3url.host],
+            "img-src": [
+              "'self'",
+              "data:",
+              "blob:",
+              env("S3_PUBLIC_ENDPOINT").replace(/^https?:\/\//, ""),
+            ],
+            "media-src": [
+              "'self'",
+              "data:",
+              "blob:",
+              env("S3_PUBLIC_ENDPOINT").replace(/^https?:\/\//, ""),
+            ],
             upgradeInsecureRequests: null,
           },
         },
@@ -27,3 +37,4 @@ module.exports = ({ env }) => {
     "strapi::public",
   ];
 };
+

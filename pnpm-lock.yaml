@@ -4402,7 +4402,7 @@ packages:
       axios: 1.6.0(debug@4.3.4)
       date-fns: 2.30.0
       date-fns-tz: 2.0.0(date-fns@2.30.0)
-      formik: 2.4.0(react@18.3.1)
+      formik: 2.4.0(react@18.2.0)
       lodash: 4.17.21
       node-schedule: 2.1.0
       react: 18.3.1
@@ -4487,7 +4487,7 @@ packages:
       date-fns: 2.30.0
       debug: 4.3.4(supports-color@5.5.0)
       fs-extra: 10.0.0
-      knex: 2.5.0(better-sqlite3@9.6.0)(pg@8.11.5)(sqlite3@5.1.7)
+      knex: 2.5.0(better-sqlite3@9.6.0)(pg@8.11.3)(sqlite3@5.1.7)
       lodash: 4.17.21
       semver: 7.5.4
       umzug: 3.2.1
@@ -4637,7 +4637,7 @@ packages:
       '@strapi/icons': 1.18.0(react-dom@18.3.1)(react@18.3.1)
       axios: 1.6.0(debug@4.3.4)
       date-fns: 2.30.0
-      formik: 2.4.0(react@18.3.1)
+      formik: 2.4.0(react@18.2.0)
       immer: 9.0.19
       lodash: 4.17.21
       qs: 6.11.1
@@ -4671,7 +4671,7 @@ packages:
       '@strapi/icons': 1.18.0(react-dom@18.3.1)(react@18.3.1)
       axios: 1.6.0(debug@4.3.4)
       date-fns: 2.30.0
-      formik: 2.4.0(react@18.3.1)
+      formik: 2.4.0(react@18.2.0)
       immer: 9.0.19
       lodash: 4.17.21
       qs: 6.11.1
@@ -4851,7 +4851,7 @@ packages:
       '@strapi/utils': 4.24.0
       bcryptjs: 2.4.3
       cheerio: 1.0.0-rc.12
-      formik: 2.4.0(react@18.3.1)
+      formik: 2.4.0(react@18.2.0)
       fs-extra: 10.0.0
       immer: 9.0.19
       koa-static: 5.0.0
@@ -4944,7 +4944,7 @@ packages:
       '@strapi/strapi': 4.24.0(@babel/runtime@7.24.5)(@codemirror/autocomplete@6.16.0)(@codemirror/language@6.10.1)(@codemirror/lint@6.7.0)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.26.3)(better-sqlite3@9.6.0)(codemirror@6.0.1)(pg@8.11.5)(react-dom@18.3.1)(react-router-dom@5.3.4)(react@18.3.1)(redux@4.2.1)(scheduler@0.23.2)(sqlite3@5.1.7)(styled-components@5.3.11)
       '@strapi/utils': 4.24.0
       axios: 1.6.0(debug@4.3.4)
-      formik: 2.4.0(react@18.3.1)
+      formik: 2.4.0(react@18.2.0)
       immer: 9.0.19
       lodash: 4.17.21
       prop-types: 15.8.1
@@ -4995,7 +4995,7 @@ packages:
       byte-size: 7.0.1
       cropperjs: 1.6.0
       date-fns: 2.30.0
-      formik: 2.4.0(react@18.3.1)
+      formik: 2.4.0(react@18.2.0)
       fs-extra: 10.0.0
       immer: 9.0.19
       koa-range: 0.3.0
@@ -5053,7 +5053,7 @@ packages:
       '@strapi/strapi': 4.24.0(@babel/runtime@7.24.5)(@codemirror/autocomplete@6.16.0)(@codemirror/language@6.10.1)(@codemirror/lint@6.7.0)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.26.3)(better-sqlite3@9.6.0)(codemirror@6.0.1)(pg@8.11.5)(react-dom@18.3.1)(react-router-dom@5.3.4)(react@18.3.1)(redux@4.2.1)(scheduler@0.23.2)(sqlite3@5.1.7)(styled-components@5.3.11)
       '@strapi/utils': 4.24.0
       bcryptjs: 2.4.3
-      formik: 2.4.0(react@18.3.1)
+      formik: 2.4.0(react@18.2.0)
       grant-koa: 5.4.8(koa@2.13.4)
       immer: 9.0.19
       jsonwebtoken: 9.0.0
@@ -5784,8 +5784,8 @@ packages:
       '@codemirror/view': 6.26.3
       '@uiw/codemirror-extensions-basic-setup': 4.22.0(@codemirror/autocomplete@6.16.0)(@codemirror/commands@6.5.0)(@codemirror/language@6.10.1)(@codemirror/lint@6.7.0)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)
       codemirror: 5.65.16
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - '@codemirror/autocomplete'
       - '@codemirror/language'
@@ -5811,8 +5811,8 @@ packages:
       '@codemirror/view': 6.26.3
       '@uiw/codemirror-extensions-basic-setup': 4.22.0(@codemirror/autocomplete@6.16.0)(@codemirror/commands@6.5.0)(@codemirror/language@6.10.1)(@codemirror/lint@6.7.0)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)
       codemirror: 6.0.1(@lezer/common@1.2.1)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - '@codemirror/autocomplete'
       - '@codemirror/language'
@@ -6374,6 +6374,23 @@ packages:
 
   /aws-sdk@2.1611.0:
     resolution: {integrity: sha512-y3RRmE9opN6qoeeZVRLu85buqufvtdxf+/3YGzVxVQZ+SM0ew9fokVVQ43GeANn5e6vWDAP2raHQvl6fpfZXgw==}
+    engines: {node: '>= 10.0.0'}
+    requiresBuild: true
+    dependencies:
+      buffer: 4.9.2
+      events: 1.1.1
+      ieee754: 1.1.13
+      jmespath: 0.16.0
+      querystring: 0.2.0
+      sax: 1.2.1
+      url: 0.10.3
+      util: 0.12.5
+      uuid: 8.0.0
+      xml2js: 0.4.19
+    dev: false
+
+  /aws-sdk@2.1572.0:
+    resolution: {integrity: sha512-VLYvEv49GLX/HuHqSkbgMt/nYQNAUfmJrPIkwyukoYMdRdKa4s70lV6ct0huliDauR5ur2HqJX91mp0iXaEpbg==}
     engines: {node: '>= 10.0.0'}
     requiresBuild: true
     dependencies:
@@ -8911,7 +8928,7 @@ packages:
       typescript: '>3.6.0'
       webpack: ^5.11.0
     dependencies:
-      '@babel/code-frame': 7.24.2
+      '@babel/code-frame': 7.23.5
       chalk: 4.1.2
       chokidar: 3.5.3
       cosmiconfig: 8.3.6(typescript@5.2.2)
@@ -8957,7 +8974,7 @@ packages:
       hoist-non-react-statics: 3.3.2
       lodash: 4.17.21
       lodash-es: 4.17.21
-      react: 18.3.1
+      react: 18.2.0
       react-fast-compare: 2.0.4
       tiny-warning: 1.0.3
       tslib: 1.14.1
@@ -10725,7 +10742,7 @@ packages:
     resolution: {integrity: sha512-GBEV4GRADeP+qtB2+6u61stea8mGcOT4mCtrYISZwfu9/ISHFJ/5zOMXYbpBE9RsS5+Gb63DW4FgmnKJ79Kf6w==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
-      '@babel/code-frame': 7.24.2
+      '@babel/code-frame': 7.23.5
       '@jest/types': 29.6.3
       '@types/stack-utils': 2.0.3
       chalk: 4.1.2
@@ -12684,7 +12701,7 @@ packages:
     resolution: {integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==}
     engines: {node: '>=8'}
     dependencies:
-      '@babel/code-frame': 7.24.2
+      '@babel/code-frame': 7.23.5
       error-ex: 1.3.2
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
@@ -12895,9 +12912,11 @@ packages:
       pg-native:
         optional: true
     dependencies:
-      pg-connection-string: 2.6.4
-      pg-pool: 3.6.2(pg@8.11.5)
-      pg-protocol: 1.6.1
+      buffer-writer: 2.0.0
+      packet-reader: 1.0.0
+      pg-connection-string: 2.6.2
+      pg-pool: 3.6.1(pg@8.11.3)
+      pg-protocol: 1.6.0
       pg-types: 2.2.0
       pgpass: 1.0.5
     optionalDependencies:
@@ -13398,7 +13417,7 @@ packages:
     dependencies:
       object-assign: 4.1.1
       prop-types: 15.8.1
-      react: 18.3.1
+      react: 18.2.0
       react-fast-compare: 3.2.2
       react-side-effect: 2.1.2(react@18.3.1)
     dev: false
@@ -13421,7 +13440,7 @@ packages:
       '@types/react': 18.3.1
       hoist-non-react-statics: 3.3.2
       intl-messageformat: 10.3.4
-      react: 18.3.1
+      react: 18.2.0
       tslib: 2.6.2
       typescript: 5.2.2
     dev: false
@@ -13549,8 +13568,8 @@ packages:
       history: 4.10.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: 18.3.1
-      react-router: 5.3.4(react@18.3.1)
+      react: 18.2.0
+      react-router: 5.3.4(react@18.2.0)
       tiny-invariant: 1.3.3
       tiny-warning: 1.0.3
     dev: false
@@ -13566,7 +13585,7 @@ packages:
       loose-envify: 1.4.0
       path-to-regexp: 1.8.0
       prop-types: 15.8.1
-      react: 18.3.1
+      react: 18.2.0
       react-is: 16.13.1
       tiny-invariant: 1.3.3
       tiny-warning: 1.0.3
@@ -13613,7 +13632,7 @@ packages:
     dependencies:
       get-nonce: 1.0.1
       invariant: 2.2.4
-      react: 18.3.1
+      react: 18.2.0
       tslib: 2.6.2
     dev: false
 
@@ -14392,8 +14411,8 @@ packages:
       is-hotkey: 0.1.8
       is-plain-object: 5.0.0
       lodash: 4.17.21
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
       scroll-into-view-if-needed: 2.2.31
       slate: 0.94.1
       tiny-invariant: 1.0.6
@@ -15540,7 +15559,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      react: 18.3.1
+      react: 18.2.0
       tslib: 2.6.2
     dev: false
 
@@ -15585,7 +15604,7 @@ packages:
         optional: true
     dependencies:
       detect-node-es: 1.1.0
-      react: 18.3.1
+      react: 18.2.0
       tslib: 2.6.2
     dev: false
 
@@ -16098,6 +16117,14 @@ packages:
     engines: {node: '>=4.0.0'}
     dependencies:
       sax: 1.3.0
+      xmlbuilder: 9.0.7
+    dev: false
+
+  /xml2js@0.5.0:
+    resolution: {integrity: sha512-drPFnkQJik/O+uPKpqSgr22mpuFHqKdbS835iAQrUC73L2F5WkboIRd63ai/2Yg6I1jzifPFKH2NTK+cfglkIA==}
+    engines: {node: '>=4.0.0'}
+    dependencies:
+      sax: 1.3.0
       xmlbuilder: 11.0.1
     dev: false
 
@@ -16105,7 +16132,7 @@ packages:
     resolution: {integrity: sha512-T4rieHaC1EXcES0Kxxj4JWgaUQHDk+qwHcYOCFHfiwKz7tOVPLq7Hjq9dM1WCMhylqMEfP7hMcOIChvotiZegA==}
     engines: {node: '>=4.0.0'}
     dependencies:
-      sax: 1.2.1
+      sax: 1.3.0
       xmlbuilder: 11.0.1
     dev: false
 
