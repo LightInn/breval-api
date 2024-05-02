@@ -47,7 +47,6 @@ COPY --from=install /temp/prod/node_modules node_modules
 COPY --from=prerelease /usr/src/app/build build
 COPY --from=prerelease /usr/src/app/.strapi .strapi
 COPY --from=prerelease /usr/src/app/config config
-COPY --from=prerelease /usr/src/app/database database
 COPY --from=prerelease /usr/src/app/public public
 COPY --from=prerelease /usr/src/app/src src
 COPY --from=prerelease /usr/src/app/types types
