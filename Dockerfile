@@ -59,7 +59,6 @@ ENV S3_SSL $S3_SSL
 ENV S3_PORT $S3_PORT
 
 ENV NODE_ENV production
-ENV DB_CLIENT='postgres'
 
 RUN pnpm run build
 
