@@ -5,6 +5,7 @@ on:
     branches: ["main"]
 
 env:
+  DB_CLIENT: "postgres"
   DATABASE_HOST: "${{secrets.DATABASE_HOST}}"
   S3_BUCKET: "${{secrets.S3_BUCKET}}"
   S3_ENDPOINT: "${{secrets.S3_ENDPOINT}}"
