@@ -42,8 +42,8 @@ dependencies:
     specifier: 5.3.4
     version: 5.3.4(react@18.3.1)
   strapi-provider-cloudflare-r2:
-    specifier: ^0.2.5
-    version: 0.2.5(@strapi/strapi@4.24.5)
+    specifier: ^0.3.0
+    version: 0.3.0(@strapi/strapi@4.24.5)
   styled-components:
     specifier: ^6.0.0
     version: 6.1.11(react-dom@18.3.1)(react@18.3.1)
@@ -14714,9 +14714,9 @@ packages:
       - supports-color
     dev: false
 
-  /strapi-provider-cloudflare-r2@0.2.5(@strapi/strapi@4.24.5):
-    resolution: {integrity: sha512-y42ySErRpcsW1JPNP443/wTrxE09BoX4dPv+DVU8E5M6dKgIHgdiz1k5V1nPMRpDAEW1IyKR/IQ7GyGK4WFZUQ==}
-    engines: {node: '>=14.19.1 <=20.x.x', npm: '>=6.0.0'}
+  /strapi-provider-cloudflare-r2@0.3.0(@strapi/strapi@4.24.5):
+    resolution: {integrity: sha512-3azodyrbI+8F1GArr+D7BKGr0CHKbHphBoeezGKjUdUCgKfcQE+Mc+BZyuWC4SuIisBM3Sy7lF0rt79wyK/Lxg==}
+    engines: {node: '>=14.19.1', npm: '>=6.0.0'}
     peerDependencies:
       '@strapi/strapi': '>=4.0.0'
     dependencies:
