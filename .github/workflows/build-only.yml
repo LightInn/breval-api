@@ -9,10 +9,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
-      - name: Yarn install and build
+        uses: actions/checkout@v4
+      - name: 'Install Node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile]
+      - name: Pnpm install and build
         run: |
-          yarn install
+          pnpm i
           yarn build
       - name: Try Building image
         uses: docker/build-push-action@v5
