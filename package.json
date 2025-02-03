@@ -34,7 +34,7 @@
     "@strapi/plugin-users-permissions": "4.25.20",
     "@strapi/strapi": "4.25.20",
     "fuse": "0.12.1",
-    "fuse.js": "7.0.0",
+    "fuse.js": "7.1.0",
     "lodash": "4.17.21",
     "minio-for-strapi-v4": "1.0.7",
     "pg": "8.13.1",
