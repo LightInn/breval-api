@@ -38,8 +38,8 @@
     "lodash": "4.17.21",
     "minio-for-strapi-v4": "1.0.7",
     "pg": "8.14.1",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-router-dom": "5.3.4",
     "strapi-provider-cloudflare-r2": "0.3.0",
     "styled-components": "5.3.11"
