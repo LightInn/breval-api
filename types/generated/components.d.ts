@@ -1,168 +1,168 @@
-import type { Attribute, Schema } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface MakeupartistsCourses extends Schema.Component {
+export interface MakeupartistsCourses extends Struct.ComponentSchema {
   collectionName: 'components_makeupartists_courses';
   info: {
     description: '';
     displayName: 'Courses';
   };
   attributes: {
-    course_description: Attribute.Text &
-      Attribute.SetMinMaxLength<{
+    course_description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 2000;
       }>;
-    date_graduation: Attribute.Date;
-    diploma: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    date_graduation: Schema.Attribute.Date;
+    diploma: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 70;
       }>;
-    school: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    school: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 70;
       }>;
   };
 }
 
-export interface MakeupartistsExperiences extends Schema.Component {
+export interface MakeupartistsExperiences extends Struct.ComponentSchema {
   collectionName: 'components_makeupartists_experiences';
   info: {
     description: '';
     displayName: 'Experiences';
   };
   attributes: {
-    city: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    city: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 70;
       }>;
-    company: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    company: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 70;
       }>;
-    date_end: Attribute.Date;
-    date_start: Attribute.Date;
-    description: Attribute.Text &
-      Attribute.SetMinMaxLength<{
+    date_end: Schema.Attribute.Date;
+    date_start: Schema.Attribute.Date;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 2000;
       }>;
-    job_name: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    job_name: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 70;
       }>;
   };
 }
 
-export interface MakeupartistsLanguage extends Schema.Component {
+export interface MakeupartistsLanguage extends Struct.ComponentSchema {
   collectionName: 'components_makeupartists_languages';
   info: {
     description: '';
     displayName: 'language';
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 70;
       }>;
   };
 }
 
-export interface MakeupartistsNetwork extends Schema.Component {
+export interface MakeupartistsNetwork extends Struct.ComponentSchema {
   collectionName: 'components_makeupartists_networks';
   info: {
     description: '';
     displayName: 'network';
   };
   attributes: {
-    email: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    email: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 200;
       }>;
-    facebook: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    facebook: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 200;
       }>;
-    instagram: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    instagram: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 200;
       }>;
-    linkedin: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    linkedin: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 200;
       }>;
-    phone: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    phone: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 20;
       }>;
-    website: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    website: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 200;
       }>;
-    youtube: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    youtube: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 200;
       }>;
   };
 }
 
-export interface MakeupartistsServiceOffers extends Schema.Component {
+export interface MakeupartistsServiceOffers extends Struct.ComponentSchema {
   collectionName: 'components_makeupartists_service_offers';
   info: {
     description: '';
     displayName: 'service_offers';
   };
   attributes: {
-    description: Attribute.Text;
-    name: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    description: Schema.Attribute.Text;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 70;
       }>;
-    options: Attribute.Component<'service-offers.options', true>;
-    price: Attribute.Text &
-      Attribute.SetMinMaxLength<{
+    options: Schema.Attribute.Component<'service-offers.options', true>;
+    price: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 70;
       }>;
   };
 }
 
-export interface MakeupartistsSkills extends Schema.Component {
+export interface MakeupartistsSkills extends Struct.ComponentSchema {
   collectionName: 'components_makeupartists_skills';
   info: {
     description: '';
     displayName: 'skills';
   };
   attributes: {
-    description: Attribute.Text &
-      Attribute.SetMinMaxLength<{
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 2000;
       }>;
-    name: Attribute.String &
-      Attribute.SetMinMaxLength<{
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 70;
       }>;
   };
 }
 
-export interface ServiceOffersOptions extends Schema.Component {
+export interface ServiceOffersOptions extends Struct.ComponentSchema {
   collectionName: 'components_service_offers_options';
   info: {
     description: '';
     displayName: 'options';
   };
   attributes: {
-    description: Attribute.Text &
-      Attribute.SetMinMaxLength<{
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 2000;
       }>;
-    name: Attribute.String;
-    price: Attribute.Text &
-      Attribute.SetMinMaxLength<{
+    name: Schema.Attribute.String;
+    price: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
         maxLength: 70;
       }>;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'makeupartists.courses': MakeupartistsCourses;
       'makeupartists.experiences': MakeupartistsExperiences;
       'makeupartists.language': MakeupartistsLanguage;
