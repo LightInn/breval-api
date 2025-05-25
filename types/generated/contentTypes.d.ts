@@ -415,24 +415,39 @@ export interface ApiProjetProjet extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    category: Schema.Attribute.Enumeration<
+      [
+        'Web Development',
+        'Mobile App',
+        'UI/UX Design',
+        'Interactive & 3D',
+        'SaaS',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'Web Development'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     creators: Schema.Attribute.JSON;
     date: Schema.Attribute.Date;
     description: Schema.Attribute.RichText;
+    live_url: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::projet.projet'
     > &
       Schema.Attribute.Private;
+    main_media: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     media: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
     publishedAt: Schema.Attribute.DateTime;
     short_description: Schema.Attribute.RichText;
+    skills: Schema.Attribute.JSON;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

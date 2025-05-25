@@ -40,6 +40,34 @@
     },
     "creators": {
       "type": "json"
+    },
+    "main_media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "skills": {
+      "type": "json"
+    },
+    "live_url": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Web Development",
+        "Mobile App",
+        "UI/UX Design",
+        "Interactive & 3D",
+        "SaaS"
+      ],
+      "default": "Web Development",
+      "required": false
     }
   }
 }
