@@ -376,7 +376,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     title: Attribute.String;
     describe: Attribute.Text;
     content: Attribute.RichText;
-    image: Attribute.Media;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     url: Attribute.String;
     tags: Attribute.JSON;
     createdAt: Attribute.DateTime;
@@ -405,7 +405,7 @@ export interface ApiProjetProjet extends Schema.CollectionType {
     description: Attribute.RichText;
     date: Attribute.Date;
     url: Attribute.String;
-    media: Attribute.Media;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     short_description: Attribute.RichText;
     creators: Attribute.JSON;
     createdAt: Attribute.DateTime;
