@@ -29,10 +29,10 @@
     "supertest": "7.0.0"
   },
   "dependencies": {
-    "@strapi/plugin-documentation": "4.24.5",
-    "@strapi/plugin-i18n": "4.24.5",
-    "@strapi/plugin-users-permissions": "4.24.5",
-    "@strapi/strapi": "4.24.5",
+    "@strapi/plugin-documentation": "4.25.22",
+    "@strapi/plugin-i18n": "4.25.22",
+    "@strapi/plugin-users-permissions": "4.25.22",
+    "@strapi/strapi": "4.25.22",
     "fuse": "0.12.1",
     "fuse.js": "7.0.0",
     "lodash": "4.17.21",
@@ -64,10 +64,9 @@
     ],
     "testEnvironment": "node"
   },
-   "pnpm": {
+  "pnpm": {
     "onlyBuiltDependencies": [
       "sharp"
     ]
   }
-
 }
