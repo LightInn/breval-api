@@ -38,5 +38,3 @@ jobs:
             S3_PUBLIC_ENDPOINT: ${{ env.S3_PUBLIC_ENDPOINT }}
             S3_SSL: ${{ env.S3_SSL }}
             S3_PORT: ${{ env.S3_PORT }}
-      - name: Deploy on cap rover
-        run: docker run caprover/cli-caprover:latest caprover deploy --caproverUrl "${{ secrets.APP_URL }}" --appToken "${{ secrets.APP_TOKEN }}" --caproverApp "${{ secrets.APP_NAME }}" --imageName "${{ secrets.APP_IMAGE }}"
