@@ -43,15 +43,15 @@ FROM base AS release
 
 ENV NODE_ENV production
 
-COPY --chown=node:node --from=install /temp/prod/node_modules node_modules
-COPY --chown=node:node --from=prerelease /usr/src/app/build build
-COPY --chown=node:node --from=prerelease /usr/src/app/.strapi .strapi
-COPY --chown=node:node --from=prerelease /usr/src/app/config config
-COPY --chown=node:node --from=prerelease /usr/src/app/public public
-COPY --chown=node:node --from=prerelease /usr/src/app/src src
-COPY --chown=node:node --from=prerelease /usr/src/app/types types
-COPY --chown=node:node --from=prerelease /usr/src/app/favicon.ico .
-COPY --chown=node:node --from=prerelease /usr/src/app/package.json .
+COPY --chown=node:node --from=install /temp/prod/node_modules node_modules \
+    --from=prerelease /usr/src/app/build build \
+    --from=prerelease /usr/src/app/.strapi .strapi \
+    --from=prerelease /usr/src/app/config config \
+    --from=prerelease /usr/src/app/public public \
+    --from=prerelease /usr/src/app/src src \
+    --from=prerelease /usr/src/app/types types \
+    --from=prerelease /usr/src/app/favicon.ico . \
+    --from=prerelease /usr/src/app/package.json .
 
 # run the app
 USER node
