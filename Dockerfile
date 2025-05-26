@@ -55,7 +55,7 @@ COPY --from=prerelease /usr/src/app/favicon.ico .
 COPY --from=prerelease /usr/src/app/package.json .
 
 # run the app
-# RUN chown -R node:node /usr/src/app
+RUN chown -R node:node /usr/src/app
 USER node
 
 EXPOSE 1337/tcp
