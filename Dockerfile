@@ -54,6 +54,7 @@ COPY --chown=node:node --from=prerelease /usr/src/app/favicon.ico .
 COPY --chown=node:node --from=prerelease /usr/src/app/package.json .
 
 # run the app
+RUN apt-get update && apt-get install -y curl --no-install-recommends && rm -rf /var/lib/apt/lists/*
 USER node
 
 EXPOSE 1337/tcp
