@@ -446,6 +446,15 @@ export interface ApiProjetProjet extends Struct.CollectionTypeSchema {
       true
     >;
     publishedAt: Schema.Attribute.DateTime;
+    rank: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 20;
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<10>;
     short_description: Schema.Attribute.RichText;
     skills: Schema.Attribute.JSON;
     title: Schema.Attribute.String;

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-05-26T10:56:28.174Z"
+    "x-generation-date": "2025-05-28T16:59:59.582Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -3533,6 +3533,9 @@
                   "SaaS"
                 ]
               },
+              "rank": {
+                "type": "integer"
+              },
               "locale": {
                 "type": "string"
               },
@@ -4359,6 +4362,9 @@
               "SaaS"
             ]
           },
+          "rank": {
+            "type": "integer"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -4698,6 +4704,9 @@
                     "Interactive & 3D",
                     "SaaS"
                   ]
+                },
+                "rank": {
+                  "type": "integer"
                 },
                 "createdAt": {
                   "type": "string",

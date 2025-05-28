@@ -42,14 +42,15 @@
       "type": "json"
     },
     "main_media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "skills": {
       "type": "json"
@@ -68,6 +69,12 @@
       ],
       "default": "Web Development",
       "required": false
+    },
+    "rank": {
+      "type": "integer",
+      "max": 20,
+      "min": 0,
+      "default": 10
     }
   }
 }
