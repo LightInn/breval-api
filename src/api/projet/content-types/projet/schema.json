@@ -50,14 +50,14 @@
     },
     "media": {
       "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"],
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "multiple": true,
-      "required": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      }
     },
     "short_description": {
       "type": "richtext",
@@ -77,14 +77,14 @@
     },
     "main_media": {
       "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "files", "videos", "audios"],
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images", "files", "videos", "audios"]
+      }
     },
     "skills": {
       "type": "json",
@@ -129,6 +129,9 @@
       "default": 10,
       "min": 0,
       "max": 20
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }
