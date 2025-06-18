@@ -44,7 +44,7 @@
     "sharp": "0.34.2",
     "strapi-health-plugin": "^1.1.1",
     "strapi-provider-cloudflare-r2": "0.3.0",
-    "styled-components": "6.1.18"
+    "styled-components": "6.1.19"
   },
   "author": {
     "name": "ForHive"
