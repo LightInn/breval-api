@@ -30,9 +30,9 @@
   },
   "dependencies": {
     "@codemirror/state": "6.5.2",
-    "@strapi/plugin-documentation": "5.16.1",
-    "@strapi/plugin-users-permissions": "5.16.1",
-    "@strapi/strapi": "5.16.1",
+    "@strapi/plugin-documentation": "5.17.0",
+    "@strapi/plugin-users-permissions": "5.17.0",
+    "@strapi/strapi": "5.17.0",
     "fuse": "0.12.1",
     "fuse.js": "7.1.0",
     "lodash": "4.17.21",
