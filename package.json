@@ -40,7 +40,7 @@
     "pg": "8.16.3",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "react-router-dom": "7.9.3",
+    "react-router-dom": "7.9.4",
     "sharp": "0.34.4",
     "strapi-health-plugin": "^1.1.1",
     "strapi-provider-cloudflare-r2": "0.3.0",
