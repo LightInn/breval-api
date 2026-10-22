@@ -1,58 +1,62 @@
-# 🚀 Getting started with Strapi
+# Running locally
 
-## 📦 Requirements
+Use Node **24.22.1** (see `.node-version`) and **pnpm 10.34.7** (see `packageManager`).
+Node 22.23.4+ and 26.12.1+ are also allowed in their respective major versions;
+Docker and CI use Node 24.22.1 LTS.
 
-- [Node.js](https://nodejs.org/en/download/)
-- [Yarn](https://yarnpkg.com/getting-started/install)
-- [Docker](https://docs.docker.com/get-docker/)
-- [Minio](https://docs.min.io/docs/minio-docker-quickstart-guide.html)
-- [Caprover](https://caprover.com/docs/get-started.html)
-- [Docker Hub](https://hub.docker.com/)
-- [Postgres Docker](https://hub.docker.com/_/postgres)
-
-## 🧰 Development
-
-Start your Strapi application with autoReload
-enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
-
-```
-yarn develop
+```sh
+npm install --global pnpm@10.34.7
+cp .env.example .env
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
-## ⚙️ Deployment
+The example uses SQLite in `.tmp/data.db`. Replace the development secrets before
+exposing the server. The R2 settings are placeholders: startup and tests work
+without a storage service, but uploads need valid Cloudflare R2 credentials and
+an endpoint including `https://`. `S3_PUBLIC_ENDPOINT` is the public hostname
+(without a protocol); `S3_SSL=true` selects HTTPS for the admin CSP.
 
-### CI / CD environments variables
+```sh
+pnpm test
+pnpm build
+NODE_ENV=production pnpm start
+```
 
-| Variable          | Description         |
-| ----------------- | ------------------- |
-| `APP_URL`         | Caprover app url    |
-| `APP_NAME`        | Caprover app name   |
-| `APP_TOKEN`       | Caprover app token  |
-| `DOCKER_USERNAME` | Docker hub username |
-| `DOCKER_PASSWORD` | Docker hub password |
-| `APP_IMAGE`       | Docker image name   |
-| `S3_ENDPOINT`     | Minio endpoint      |
-| `S3_PORT`         | Minio port          |
-| `S3_SSL`          | Minio ssl enable    |
+The integration suite starts a real Strapi process with a fresh temporary SQLite
+database, checks health, admin initialization, API access controls, login rejection,
+native image processing, authenticated blog create/read/delete, and R2 operations
+against a simulated S3 endpoint. It never uses the configured PostgreSQL database.
+On PowerShell, set `$env:NODE_ENV="production"` before `pnpm start`.
 
-### Docker environments variables
+# Deployment
 
-| Variable            | Description                                   |
-| ------------------- | --------------------------------------------- |
-| `HOST`              | Straip host listener                          |
-| `PORT`              | Straip port listener                          |
-| `APP_KEY`           | Set the application key                       |
-| `API_TOKEN_SALT`    | Set the API token salt                        |
-| `ADMIN_JWT_SECRET`  | Set the admin JWT secret                      |
-| `DB_CLIENT`         | Set the database client ( postgres / sqlite ) |
-| `DATABASE_HOST`     | Set the database host                         |
-| `DATABASE_PORT`     | Set the database port                         |
-| `DATABASE_NAME`     | Set the database name                         |
-| `DATABASE_USERNAME` | Set the database username                     |
-| `DATABASE_PASSWORD` | Set the database password                     |
-| `S3_ENDPOINT`       | Minio endpoint                                |
-| `S3_PORT`           | Minio port                                    |
-| `S3_SSL`            | Minio ssl enable                              |
-| `S3_BUCKET`         | Minio bucket name                             |
-| `S3_ACCESS_KEY_ID`  | Minio access key id                           |
-| `S3_ACCESS_SECRET`  | Minio access secret                           |
+```sh
+docker build -t breval-api .
+docker run --rm --env-file .env -e HOST=0.0.0.0 -p 1337:1337 breval-api
+```
+
+Use `DB_CLIENT=postgres` and configure `DATABASE_HOST`, `DATABASE_PORT` (default
+5432), `DATABASE_NAME`, `DATABASE_USERNAME`, `DATABASE_PASSWORD`, and optionally
+`DATABASE_SSL`. Supply application secrets (`APP_KEYS`, `API_TOKEN_SALT`,
+`ADMIN_JWT_SECRET`, `JWT_SECRET`, `TRANSFER_TOKEN_SALT`, `ENCRYPTION_KEY`) and R2
+credentials at runtime. Preserve existing production secrets when upgrading.
+No production credentials are needed to build the image.
+
+Back up the database and media before upgrading an existing Strapi instance;
+Strapi runs database migrations at startup. Validate against a copy of the
+production PostgreSQL database before rolling out.
+
+Pull requests run the integration tests, admin build, Docker build and a health
+check of the production image. Pushes to `main` publish to Docker Hub using
+`DOCKER_USERNAME`, `DOCKER_PASSWORD`, and `APP_IMAGE` repository secrets.
+
+# Dependency choices
+
+Strapi and its official plugins are aligned on 5.59.0. React stays on 18.3.1 and
+React Router on 6.30.6 to satisfy Strapi's peer dependencies. SQLite uses
+`better-sqlite3` in production as well as tests. The unused `sqlite3`, `fuse`
+(which is different from `fuse.js`) and `minio-for-strapi-v4` packages were removed.
+
+See [UPGRADE.md](UPGRADE.md) for security overrides, remaining audit alerts and
+validation limits.

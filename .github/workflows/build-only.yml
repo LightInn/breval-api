@@ -1,34 +1,40 @@
-name: Just Build Docker
+name: Test and Build
 
 on:
   pull_request:
     branches: ["main"]
 
+permissions:
+  contents: read
+
 jobs:
-  just-build:
+  test-and-build:
     runs-on: ubuntu-latest
+    env:
+      STRAPI_TELEMETRY_DISABLED: "true"
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: "Install Node"
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: "22.x"
-      - uses: pnpm/action-setup@v4
-        with:
-          version: latest
-          run_install: |
-            - recursive: true
-              args: [--frozen-lockfile]
-      - name: Pnpm install and build
-        run: |
-          pnpm i
-          yarn build
-      - name: Try Building image
-        uses: docker/build-push-action@v6
+          node-version-file: .node-version
+      - uses: pnpm/action-setup@v6
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Configure local test environment
+        run: cp .env.example .env
+      - name: Integration tests
+        run: pnpm test
+      - name: Build admin
+        run: pnpm build
+      - name: Build Docker image
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: false
-          tags: ${{ secrets.APP_IMAGE }}
-          build-args: |
-            S3_PUBLIC_ENDPOINT: ${{ secrets.S3_PUBLIC_ENDPOINT }}
+          tags: breval-api:test
+          load: true
+      - name: Smoke test production image
+        run: |
+          docker run -d --name breval-api --env-file .env -e HOST=0.0.0.0 -p 1337:1337 breval-api:test
+          trap 'docker logs breval-api; docker rm -f breval-api' EXIT
+          curl --fail --retry 30 --retry-delay 2 --retry-all-errors http://127.0.0.1:1337/_health
