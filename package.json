@@ -78,7 +78,7 @@
       "lodash@4.17.21": "4.18.1",
       "strapi-provider-cloudflare-r2>aws-sdk": "2.1693.0",
       "@strapi/provider-email-sendmail>nodemailer": "9.1.1",
-      "@strapi/strapi>webpack": "5.112.0"
+      "@strapi/strapi>webpack": "5.112.1"
     }
   },
   "packageManager": "pnpm@10.34.7"
